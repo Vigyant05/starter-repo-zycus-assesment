@@ -2,6 +2,7 @@ import os
 import argparse
 import uvicorn
 from dotenv import load_dotenv
+import logging
 
 def main():
     parser = argparse.ArgumentParser(description="AI Support & TAM Tooling")
@@ -26,6 +27,7 @@ def main():
 
     # Load environment variables
     load_dotenv()
+
 
     if not args.command:
         parser.print_help()
