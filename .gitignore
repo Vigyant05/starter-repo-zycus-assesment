@@ -9,5 +9,3 @@ chroma_db/
 dist/
 build/
 .DS_Store
-commands.md
-script.md
