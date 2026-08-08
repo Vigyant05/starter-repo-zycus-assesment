@@ -1,0 +1,266 @@
+{
+  "summary": {
+    "total_tests": 14,
+    "passed": 11,
+    "failed": 3,
+    "pass_rate_percent": 78.6,
+    "average_quality_score": 0.878
+  },
+  "results": [
+    {
+      "test_name": "clear_p1_bug",
+      "is_adversarial": false,
+      "passed": true,
+      "quality_score": 1.0,
+      "llm_judge_score": 1.0,
+      "llm_judge_reasoning": "The triage output meets all acceptance criteria: it correctly classifies the issue as P1 urgency and Bug category, identifies DataBridge Pro as the product, matches the error in the knowledge base, routes to the correct team, and provides a draft response that acknowledges the urgency of the situation.",
+      "rule_checks": {
+        "schema_valid": true,
+        "category_valid_enum": true,
+        "urgency_valid_enum": true,
+        "has_reasoning": true,
+        "has_draft_response": true,
+        "has_recommended_team": true,
+        "has_product": true,
+        "has_product_area": true,
+        "expected_category_match": true,
+        "expected_urgency_match": true,
+        "expected_product_match": true,
+        "kb_match_present": true
+      },
+      "error": null
+    },
+    {
+      "test_name": "billing_question",
+      "is_adversarial": false,
+      "passed": true,
+      "quality_score": 1.0,
+      "llm_judge_score": 1.0,
+      "llm_judge_reasoning": "The triage output correctly classifies the issue as a Billing inquiry, assigns a suitable urgency tier of P4, routes it to Tier-1 Support, and provides a draft response that addresses the user's concern by mentioning the inclusion of service accounts and API users in seat billing.",
+      "rule_checks": {
+        "schema_valid": true,
+        "category_valid_enum": true,
+        "urgency_valid_enum": true,
+        "has_reasoning": true,
+        "has_draft_response": true,
+        "has_recommended_team": true,
+        "has_product": true,
+        "has_product_area": true,
+        "expected_category_match": true,
+        "expected_urgency_match": true
+      },
+      "error": null
+    },
+    {
+      "test_name": "feature_request",
+      "is_adversarial": false,
+      "passed": true,
+      "quality_score": 1.0,
+      "llm_judge_score": 1.0,
+      "llm_judge_reasoning": "The triage output correctly classifies the issue as a Feature Request, assigns the correct urgency tier of P4, identifies AnalyticsHub as the product, and routes the request to the Product Team, meeting all acceptance criteria.",
+      "rule_checks": {
+        "schema_valid": true,
+        "category_valid_enum": true,
+        "urgency_valid_enum": true,
+        "has_reasoning": true,
+        "has_draft_response": true,
+        "has_recommended_team": true,
+        "has_product": true,
+        "has_product_area": true,
+        "expected_category_match": true,
+        "expected_urgency_match": true,
+        "expected_product_match": true
+      },
+      "error": null
+    },
+    {
+      "test_name": "known_error_code",
+      "is_adversarial": false,
+      "passed": true,
+      "quality_score": 1.0,
+      "llm_judge_score": 1.0,
+      "llm_judge_reasoning": "The triage output meets all acceptance criteria: it correctly identifies the product as SecureVault, matches the SAML_ASSERTION_EXPIRED error in the knowledge base, references clock skew/NTP sync, and the draft response advises checking NTP synchronization. The output is factually sound, complete, coherent, professional, and evidence-based.",
+      "rule_checks": {
+        "schema_valid": true,
+        "category_valid_enum": true,
+        "urgency_valid_enum": true,
+        "has_reasoning": true,
+        "has_draft_response": true,
+        "has_recommended_team": true,
+        "has_product": true,
+        "has_product_area": true,
+        "expected_category_match": true,
+        "expected_urgency_match": true,
+        "expected_product_match": true,
+        "kb_match_present": true
+      },
+      "error": null
+    },
+    {
+      "test_name": "integration_issue",
+      "is_adversarial": false,
+      "passed": true,
+      "quality_score": 0.95,
+      "llm_judge_score": 0.9,
+      "llm_judge_reasoning": "The output correctly classifies the issue as an Integration category, identifies CloudSync as the product, and references relevant troubleshooting steps from the knowledge base, including a hint towards IP allowlisting. The draft response is professional, coherent, and shows a clear understanding of the customer's issue. The only aspect preventing a perfect score is the lack of explicit mention of evidence from the input ticket in the reasoning, such as directly referencing the 1,500 failed deliveries in the context of the impact on operations.",
+      "rule_checks": {
+        "schema_valid": true,
+        "category_valid_enum": true,
+        "urgency_valid_enum": true,
+        "has_reasoning": true,
+        "has_draft_response": true,
+        "has_recommended_team": true,
+        "has_product": true,
+        "has_product_area": true,
+        "expected_category_match": true,
+        "expected_urgency_match": true,
+        "expected_product_match": true,
+        "kb_match_present": true
+      },
+      "error": null
+    },
+    {
+      "test_name": "adversarial_ambiguous_category",
+      "is_adversarial": true,
+      "passed": true,
+      "quality_score": 0.95,
+      "llm_judge_score": 0.9,
+      "llm_judge_reasoning": "The output correctly identifies AnalyticsHub as the product, categorizes the issue as Performance, and provides a coherent reasoning that acknowledges the ambiguity between a bug and a performance issue. The urgency tier is appropriately set to P2, considering the intermittent nature of the problem. The draft response is professional, helpful, and suggests relevant troubleshooting steps. The only aspect preventing a perfect score is the lack of explicit evidence from the input that directly supports the choice of Performance over Bug, though the reasoning provided is logical and well-explained.",
+      "rule_checks": {
+        "schema_valid": true,
+        "category_valid_enum": true,
+        "urgency_valid_enum": true,
+        "has_reasoning": true,
+        "has_draft_response": true,
+        "has_recommended_team": true,
+        "has_product": true,
+        "has_product_area": true,
+        "expected_product_match": true
+      },
+      "error": null
+    },
+    {
+      "test_name": "adversarial_misleading_urgency",
+      "is_adversarial": true,
+      "passed": true,
+      "quality_score": 1.0,
+      "llm_judge_score": 1.0,
+      "llm_judge_reasoning": "The output correctly classifies the issue as a P4 bug due to its cosmetic nature and low impact, despite the customer's urgent tone. The reasoning clearly explains the discrepancy between the customer's urgency and the actual impact of the issue, and the draft response is professional and helpful.",
+      "rule_checks": {
+        "schema_valid": true,
+        "category_valid_enum": true,
+        "urgency_valid_enum": true,
+        "has_reasoning": true,
+        "has_draft_response": true,
+        "has_recommended_team": true,
+        "has_product": true,
+        "has_product_area": true,
+        "expected_category_match": true,
+        "expected_urgency_match": true
+      },
+      "error": null
+    },
+    {
+      "test_name": "at_risk_account",
+      "is_adversarial": false,
+      "passed": false,
+      "quality_score": 0.887,
+      "llm_judge_score": 0.9,
+      "llm_judge_reasoning": "The account brief meets most of the acceptance criteria, including a well-structured executive summary, clear risk flags with direct quotes from tickets, and talking points that address the declining usage trend and upcoming renewal. However, it could be improved by including more specific details on the churn risk and escalation notes, as well as a more detailed plan for addressing the customer's concerns.",
+      "rule_checks": {
+        "schema_valid": true,
+        "summary_length_ok": true,
+        "has_executive_summary": true,
+        "has_talking_points": true,
+        "has_risk_flags": true,
+        "min_risk_count_met": true,
+        "risks_have_quotes": true,
+        "churn_signal_found": false
+      },
+      "error": null
+    },
+    {
+      "test_name": "healthy_account",
+      "is_adversarial": false,
+      "passed": true,
+      "quality_score": 0.95,
+      "llm_judge_score": 0.9,
+      "llm_judge_reasoning": "The account brief meets most of the acceptance criteria, including a well-structured executive summary, a positive health status, and talking points focused on growth and expansion opportunities. The risk flags are empty, as required. The only potential area for improvement is the lack of analysis of tickets, but since there are no tickets, this is not a significant concern. Overall, the brief is comprehensive, coherent, and professional.",
+      "rule_checks": {
+        "schema_valid": true,
+        "summary_length_ok": true,
+        "has_executive_summary": true,
+        "has_talking_points": true
+      },
+      "error": null
+    },
+    {
+      "test_name": "enterprise_with_p1_tickets",
+      "is_adversarial": false,
+      "passed": false,
+      "quality_score": 0.6,
+      "llm_judge_score": 0.4,
+      "llm_judge_reasoning": "The account brief lacks reference to P1 ticket context in the executive summary, and there are no risk flags cited with specific ticket evidence. Additionally, talking points do not address the resolution status of P1s, as there are no P1 tickets mentioned. The brief does provide some useful information, such as ARR, renewal date, and NPS score, but it does not meet the acceptance criteria.",
+      "rule_checks": {
+        "schema_valid": true,
+        "summary_length_ok": true,
+        "has_executive_summary": true,
+        "has_talking_points": true,
+        "has_risk_flags": false
+      },
+      "error": null
+    },
+    {
+      "test_name": "new_account",
+      "is_adversarial": false,
+      "passed": true,
+      "quality_score": 0.95,
+      "llm_judge_score": 0.9,
+      "llm_judge_reasoning": "The account brief meets most of the acceptance criteria, including a well-structured executive summary, valid JSON, and actionable talking points. However, the lack of recent tickets analyzed and the last login being 57 days ago could be further emphasized in the executive summary or open risks section to provide a more comprehensive overview.",
+      "rule_checks": {
+        "schema_valid": true,
+        "summary_length_ok": true,
+        "has_executive_summary": true,
+        "has_talking_points": true
+      },
+      "error": null
+    },
+    {
+      "test_name": "determinism_check",
+      "is_adversarial": false,
+      "passed": false,
+      "quality_score": 0.0,
+      "llm_judge_score": 0.0,
+      "llm_judge_reasoning": "",
+      "rule_checks": {
+        "is_deterministic": false
+      },
+      "error": null
+    },
+    {
+      "test_name": "adversarial_no_tickets",
+      "is_adversarial": true,
+      "passed": true,
+      "quality_score": 1.0,
+      "llm_judge_score": 1.0,
+      "llm_judge_reasoning": "The account brief output meets all acceptance criteria, handling zero tickets gracefully, noting the absence of recent tickets in the executive summary, and conforming to the AccountBrief schema without errors.",
+      "rule_checks": {
+        "schema_valid": true,
+        "summary_length_ok": true,
+        "has_executive_summary": true,
+        "has_talking_points": true
+      },
+      "error": null
+    },
+    {
+      "test_name": "adversarial_missing_account",
+      "is_adversarial": true,
+      "passed": true,
+      "quality_score": 1.0,
+      "llm_judge_score": 0.0,
+      "llm_judge_reasoning": "",
+      "rule_checks": {},
+      "error": null
+    }
+  ]
+}
